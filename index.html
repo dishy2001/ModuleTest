@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <style media="screen">
+        *,
+  *:before,
+  *:after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+  .background{
+      width: 430px;
+      height: 520px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      left: 50%;
+      top: 50%;
+  }
+  .background .shape{
+      height: 200px;
+      width: 200px;
+      position: absolute;
+      border-radius: 50%;
+  }
+  .shape:first-child{
+      background: linear-gradient(
+          #1845ad,
+          #23a2f6
+      );
+      left: -80px;
+      top: -80px;
+  }
+  #registerForm{
+      height: 520px;
+      width: 400px;
+      background-color: rgba(0, 0, 1, 0.13);
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      border-radius: 10px;
+      backdrop-filter: blur(200px);
+      border: 2px solid rgba(14, 14, 14, 0.1);
+      box-shadow: 0 0 40px rgba(8,7,16,0.6);
+      padding: 50px 35px;
+  }
+  #registerForm *{
+      font-family: 'Poppins',sans-serif;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+  }
+  #registerForm h3{
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 42px;
+      text-align: center;
+  }
+  
+  label{
+      display: block;
+      margin-top: 30px;
+      font-size: 16px;
+      font-weight: 500;
+  }
+  input{
+      display: block;
+      height: 50px;
+      width: 100%;
+      background-color: rgba(255,255,255,0.07);
+      border-radius: 3px;
+      padding: 0 10px;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+  }
+  ::placeholder{
+      color: #e5e5e5;
+  }
+  #registerButton{
+      margin-top: 50px;
+      margin-left: 2px;
+      margin-right: 2px;
+      width: 48%;
+      background-color: #fefcfc;
+      color: #080710;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  #cancel {
+    margin-top: 50px;
+      margin-left: 2px;
+      margin-right: 2px;
+      width: 48%;
+      background-color: #e00b0b;
+      color: #080710;
+      padding: 15px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+      </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="document.getElementById('registerForm').style.display='block'">
+          <img src="register.png">
+          <span>1. Register!</span>
+        </div>
+        <div class="box" onclick="document.getElementById('txt').style.display='block'">
+          <img id="detailsimg" src="blank-profile-picture-png.png">
+          <div id="txt">
+            <h2 class="headtxt">
+              Details
+            </h2>
+            <h3 class="firsttxt">
+              Name:
+            </h3>
+            <h3 class="secondtxt">
+                Username:
+            </h3>
+          </div>
+          <span>2. Details</span>
+        </div>
+        <div class="box" onclick="document.getElementById('dicegame').style.display='block'">
+          <img id="diceimg" src="dice.jpg">
+            <div id="dicegame">
+                <h1 id="rollll">Roll 3 times</h1>
+                <div class="dice">
+                    <img class="img1" src="dice6.png">
+                </div>
+                <div class="container bottom">
+                  <button type="button" class="butn"
+                      onClick="rollTheDice()">
+                      Roll the Dice
+                  </button>
+                </div>
+            </div>
+          <span>3. Roll 3 times</span>
+        </div>
+        <div class="box">
+          <img id="couponimg" src="coupon.jpg">
+          <div id="cpn">
+            <h5 class="cpnnum">Coupon: </h5>
+          </div>
+          <span>4. Hurray!  &#127881;</span>
+        </div>
+    </div>
+
+
+
+
+
+		
+    <!-- Signup -->
+ 
+    <form id="registerForm">
+        <h3>Register Here</h3>
+
+        <label for="uname">Name</label>
+        <input type="text" placeholder="Enter your name..." id="uname">
+
+        <label for="password">E-mail</label>
+        <input type="email" placeholder="Enter email..." id="email">
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter username..." id="username">
+        <button id="registerButton">Register</button><button id="cancel" onclick="document.getElementById('registerForm').style.display='none'">Cancel</button>
+    </form>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
